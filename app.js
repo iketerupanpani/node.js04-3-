@@ -11,6 +11,7 @@ var cookieParser = require('cookie-parser');
 //morgan=HTTPリクエストのログ出力に関するモジュール
 var logger = require('morgan');
 var session = require('express-session');
+var ajax = require('./routes/ajax');
 
 
 //ルート用スクリプトのロード
@@ -31,7 +32,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use('/ajax', ajax);
 
 var session_opt = {
   secret: 'keyboard cat',
