@@ -3,8 +3,8 @@
 
 <head>
     <meta http-equiv="content-type" content="text/html" charset="UTF-8">
-    <title><%=title%>></title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title><%=title%></title>
+    <link rel="stylesheet" href="../public/stylesheets/style.css">
 </head>
 
 <body>
@@ -12,7 +12,10 @@
     <head><%=title %></head>
     <div role="main">
         <p><%- content %></p>
-
+        <form action="/hello/post" method="POST">
+            <input type="text" name="message">
+            <input type="submit" value="送信">
+        </form>
     </div>
 </body>
 
